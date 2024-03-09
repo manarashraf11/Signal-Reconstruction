@@ -1,0 +1,1848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1185</width>
+    <height>920</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* main */
+QMainWindow {
+	background-color: rgb(79, 90, 112);
+}
+/* menubar */
+QMenuBar {	
+	font: 63 9pt &quot;Segoe UI Variable Text Semibold&quot;;
+	color: rgb(138, 138, 138);
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(207, 209, 207, 255), stop:1 rgba(230, 229, 230, 255));
+}
+QMenuBar::item:selected {
+  	background-color: rgb(161, 186, 230);
+	color: #FFFFFF;
+}
+QMenu::item{	
+	font: 8pt &quot;Segoe UI&quot;;
+}
+QMenu::item:selected {
+	border-style: solid;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-left-color: rgb(161, 186, 230);
+	border-bottom-color: transparent;
+	border-left-width: 2px;
+	color: #000000;
+	padding-left:15px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-right:7px;
+	background-color: rgb(161, 186, 230);
+}
+QMenu::item {
+	font: 8pt &quot;Segoe UI&quot;;
+	border-style: solid;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	border-bottom-width: 1px;
+	color: #000000;
+	padding-left:10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-right:7px;
+}
+/* push button */
+QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(82, 94, 117);
+	border-radius: 15px;
+}
+QPushButton:hover{
+	border-style: solid;
+	border-radius: 15px;
+	border-color: rgb(82, 94, 117);
+	border-width: 2px;
+	/*background-color: rgb(185, 222, 255);*/
+	color: rgb(0, 0, 0);
+	background-color: rgb(161, 186, 230);
+}
+QPushButton:pressed{
+	border-style: solid;
+	border-radius: 15px;
+	border-color: rgb(138, 173, 204);
+	border-width: 2px;
+	color: rgb(0,0,0);
+	background-color: rgb(161, 186, 230);
+}
+/* slider */
+QSlider::groove:horizontal {
+	height: 5px;
+	background: rgb(82, 94, 117);
+}
+QSlider::handle:horizontal {
+	background-color: rgb(79, 90, 112);
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(207,207,207);
+	width: 12px;
+	margin: -5px 0;
+	border-radius: 7px;
+}
+QSlider::add-page:horizontal {
+	background-color: rgb(161, 186, 230);
+}
+/* LCD */
+QLCDNumber {
+	color: rgb(0, 0, 0);
+}
+QRadioButton::indicator:checked {
+	height: 14px;
+	width: 14px;
+	border-style:solid;
+	border-radius:7px;
+	border-width: 1px;
+	border-color: rgb(79, 90, 112);
+	/*color: rgb(140, 162, 202);*/
+	background-color: rgb(161, 186, 230);
+}
+/* checkbox */
+QCheckBox:hover {
+	border-radius:2px;
+	border-style:solid;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	border-width:2px;
+	border-color: transparent;
+}
+QCheckBox::indicator:checked {
+	height: 11px;
+	width: 11px;
+	border-style:solid;
+	border-radius: 2px;
+	border-width: 1px;
+	border-color: rgb(79, 90, 112);
+	color: #000000;
+	background-color: rgb(161, 186, 230);
+
+}
+QCheckBox::indicator:unchecked {
+
+	height: 11px;
+	width: 11px;
+	border-style:solid;
+	border-radius: 2px;
+	border-width: 1px;
+	border-color: rgb(79, 90, 112);
+	color: #000000;
+}
+/* combobox */
+QComboBox{
+	color: rgb(255, 255, 255);
+	background-color: rgb(82, 94, 117);
+	border-radius: 2px;
+}/*
+QListView::item {
+	border-bottom: 5px solid white; margin:3px;
+}
+QListView::item:selected {
+	border-bottom: 5px solid black; margin:3px;
+    color: black;
+}*/
+QComboBox::item{
+	color: rgb(255, 255, 255);
+	background-color: rgb(82, 94, 117);
+	border-radius: 2px;
+}
+/* tab */
+QTabWidget {
+	border-radius: 6px;
+	color:rgb(0,0,0);
+}
+QTabWidget::pane {
+		border-color: rgb(223,223,223);
+		background-color:rgb(226,226,226);
+		border-style: solid;
+		border-width: 2px;
+    	border-top-right-radius: 6px;
+    	border-bottom-right-radius: 6px;
+    	border-bottom-left-radius: 6px;
+}
+QTabBar::tab:first {
+	border-style: solid;
+	border-left-width:1px;
+	border-right-width:0px;
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-top-color: rgb(209,209,209);
+	border-left-color: rgb(229, 229, 229);
+	border-bottom-color: rgb(229,229,229);
+	border-top-left-radius: 4px;
+	/*border-bottom-left-radius: 4px;*/
+	color: #000000;
+	padding: 3px;
+	margin-left:0px;
+	background-color:  rgb(255, 255, 255);
+}
+QTabBar::tab:last {
+	border-style: solid;
+	border-width:1px;
+	border-top-color: rgb(209,209,209);
+	border-left-color:rgb(229, 229, 229);
+	border-right-color: rgb(229, 229, 229);
+	border-bottom-color: rgb(229,229,229);
+	border-top-right-radius: 4px;
+	/*border-bottom-right-radius: 4px;*/
+	color: #000000;
+	padding: 4px;
+	margin-left:0px;
+	background-color: rgb(255, 255, 255);
+}
+QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {
+  	border-style: solid;
+  	border-left-width:2px;
+	border-right-color: rgb(82, 94, 117);
+	border-top-color: rgb(82, 94, 117);
+	border-left-color: rgb(82, 94, 117);
+	border-bottom-color: rgb(82, 94, 117);
+	color: #ffffff;
+	padding: 3px;
+	margin-left:0px;
+	background-color: rgb(161, 186, 230);
+}
+QTabBar::tab:selected, QTabBar::tab:first:selected, QTabBar::tab:hover {
+  	border-style: solid;
+  	border-right-width:2px;
+	border-right-color: rgb(82, 94, 117);
+	border-top-color: rgb(82, 94, 117);
+	border-left-color: rgb(82, 94, 117);
+	border-bottom-color: rgb(82, 94, 117);
+	border-left-width: 1px;
+	color: #ffffff;
+	padding: 3px;
+	margin-left:0px;
+	background-color: rgb(161, 186, 230);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_14">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_13">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="3">
+       <spacer name="horizontalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>16</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="text">
+         <string>Sampling Studio</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QToolButton" name="toolButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">	background-color: rgb(79, 90, 112);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>DSP/task 2/icons/signal processing studio.png</normaloff>DSP/task 2/icons/signal processing studio.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>800</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Composer tab</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_composer">
+       <attribute name="title">
+        <string>Composer</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_28">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_12" columnstretch="2,3">
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupBox_result_signal">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI Semibold</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="title">
+             <string>Result Signal</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_6" rowstretch="3,1">
+               <property name="verticalSpacing">
+                <number>35</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="PlotWidget" name="plotwidget_result" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>600</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <layout class="QGridLayout" name="gridLayout_5" rowstretch="0" columnstretch="0,0,0">
+                 <property name="horizontalSpacing">
+                  <number>20</number>
+                 </property>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="pushButton_clear">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Segoe UI Semibold</family>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>Clear the result signal</string>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Clear</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>DSP/task 2/icons/clear2.png</normaloff>DSP/task 2/icons/clear2.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>15</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="shortcut">
+                    <string>Ctrl+L</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QPushButton" name="pushButton_next">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Segoe UI Semibold</family>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>Go to the sampler </string>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Next</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>DSP/task 2/icons/next2.png</normaloff>DSP/task 2/icons/next2.png</iconset>
+                   </property>
+                   <property name="shortcut">
+                    <string>Right</string>
+                   </property>
+                   <property name="flat">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QPushButton" name="pushButton_export">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Segoe UI Semibold</family>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>Export the result signal to a csv file</string>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Export</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>DSP/task 2/icons/export2.png</normaloff>DSP/task 2/icons/export2.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="shortcut">
+                    <string>Ctrl+E</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_signal_mixer">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI Semibold</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="title">
+             <string>Signal Mixer</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_16">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_15">
+               <item row="0" column="0">
+                <widget class="PlotWidget" name="plotwidget_mixer" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>550</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <property name="horizontalSpacing">
+                  <number>7</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>35</number>
+                 </property>
+                 <item row="0" column="0">
+                  <layout class="QGridLayout" name="gridLayout_3">
+                   <property name="verticalSpacing">
+                    <number>20</number>
+                   </property>
+                   <item row="0" column="0">
+                    <layout class="QGridLayout" name="gridLayout">
+                     <property name="verticalSpacing">
+                      <number>20</number>
+                     </property>
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_9">
+                       <property name="horizontalSpacing">
+                        <number>20</number>
+                       </property>
+                       <item row="0" column="1">
+                        <widget class="QSlider" name="horizontalSlider_freq">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="toolTip">
+                          <string>Frequency</string>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>true</bool>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="2">
+                        <widget class="QLCDNumber" name="lcdNumber_freq">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string>Frequency</string>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">
+background-color: rgb(161, 186, 230);
+</string>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="smallDecimalPoint">
+                          <bool>false</bool>
+                         </property>
+                         <property name="segmentStyle">
+                          <enum>QLCDNumber::Flat</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_freq">
+                         <property name="minimumSize">
+                          <size>
+                           <width>72</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Segoe UI Semibold</family>
+                           <pointsize>9</pointsize>
+                          </font>
+                         </property>
+                         <property name="toolTip">
+                          <string>Frequency</string>
+                         </property>
+                         <property name="text">
+                          <string>Frequency</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="1" column="0">
+                      <layout class="QGridLayout" name="gridLayout_10">
+                       <property name="horizontalSpacing">
+                        <number>20</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_amplitude">
+                         <property name="minimumSize">
+                          <size>
+                           <width>72</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Segoe UI Semibold</family>
+                           <pointsize>9</pointsize>
+                          </font>
+                         </property>
+                         <property name="toolTip">
+                          <string>Amplitude</string>
+                         </property>
+                         <property name="text">
+                          <string>Amplitude</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="2">
+                        <widget class="QLCDNumber" name="lcdNumber_amplitude">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string>Amplitude</string>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>false</bool>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(161, 186, 230);
+color: rgb(0, 0, 0);</string>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="lineWidth">
+                          <number>1</number>
+                         </property>
+                         <property name="segmentStyle">
+                          <enum>QLCDNumber::Flat</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QSlider" name="horizontalSlider_amplitude">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="toolTip">
+                          <string>Amplitude</string>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>true</bool>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="2" column="0">
+                      <layout class="QGridLayout" name="gridLayout_11">
+                       <property name="horizontalSpacing">
+                        <number>20</number>
+                       </property>
+                       <item row="0" column="1">
+                        <widget class="QSlider" name="horizontalSlider_phase">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="toolTip">
+                          <string>Phase</string>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>true</bool>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="2">
+                        <widget class="QLCDNumber" name="lcdNumber_phase">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string>Phase</string>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(161, 186, 230);
+</string>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="smallDecimalPoint">
+                          <bool>false</bool>
+                         </property>
+                         <property name="segmentStyle">
+                          <enum>QLCDNumber::Flat</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_phase">
+                         <property name="minimumSize">
+                          <size>
+                           <width>72</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Segoe UI Semibold</family>
+                           <pointsize>9</pointsize>
+                          </font>
+                         </property>
+                         <property name="toolTip">
+                          <string>Phase</string>
+                         </property>
+                         <property name="text">
+                          <string>Phase</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                   <item row="1" column="0">
+                    <layout class="QGridLayout" name="gridLayout_2">
+                     <item row="0" column="0">
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="pushButton_add">
+                       <property name="minimumSize">
+                        <size>
+                         <width>150</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Segoe UI Semibold</family>
+                         <pointsize>9</pointsize>
+                         <stylestrategy>PreferDefault</stylestrategy>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="toolTip">
+                        <string>Add this signal to the result signal</string>
+                       </property>
+                       <property name="layoutDirection">
+                        <enum>Qt::LeftToRight</enum>
+                       </property>
+                       <property name="autoFillBackground">
+                        <bool>false</bool>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string>Add</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>DSP/task 2/icons/add.png</normaloff>DSP/task 2/icons/add.png</iconset>
+                       </property>
+                       <property name="shortcut">
+                        <string>Return</string>
+                       </property>
+                       <property name="autoDefault">
+                        <bool>false</bool>
+                       </property>
+                       <property name="default">
+                        <bool>false</bool>
+                       </property>
+                       <property name="flat">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="2">
+                      <spacer name="horizontalSpacer">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="1" column="0">
+                  <layout class="QGridLayout" name="gridLayout_4">
+                   <property name="horizontalSpacing">
+                    <number>5</number>
+                   </property>
+                   <property name="verticalSpacing">
+                    <number>7</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QComboBox" name="comboBox_signals">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Semibold</family>
+                       <pointsize>9</pointsize>
+                      </font>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="toolTip">
+                      <string>Choose a signal</string>
+                     </property>
+                     <property name="autoFillBackground">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QPushButton" name="pushButton_delete">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Semibold</family>
+                       <pointsize>9</pointsize>
+                      </font>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="toolTip">
+                      <string>Delete this signal</string>
+                     </property>
+                     <property name="autoFillBackground">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>Delete</string>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>DSP/task 2/icons/delete.png</normaloff>DSP/task 2/icons/delete.png</iconset>
+                     </property>
+                     <property name="shortcut">
+                      <string>Ctrl+Del</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_sampler">
+       <attribute name="title">
+        <string>Sampler</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_30">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_29" rowstretch="3,0">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_17">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_original_signal">
+              <property name="font">
+               <font>
+                <family>Segoe UI Semibold</family>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="title">
+               <string>Original Signal</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_20">
+               <item row="0" column="0">
+                <widget class="PlotWidget" name="plotwidget_original" native="true">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QGroupBox" name="groupBox_error">
+              <property name="font">
+               <font>
+                <family>Segoe UI Semibold</family>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="title">
+               <string>Error</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="0" column="0">
+                <widget class="PlotWidget" name="plotwidget_error" native="true">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="groupBox_reconstructed_sig">
+              <property name="font">
+               <font>
+                <family>Segoe UI Semibold</family>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="title">
+               <string>Reconstructed Signal</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_19">
+               <item row="0" column="0">
+                <widget class="PlotWidget" name="plotwidget_reconstructed" native="true">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QGridLayout" name="gridLayout_27">
+            <property name="horizontalSpacing">
+             <number>15</number>
+            </property>
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_24">
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="checkBox_noise">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Noise</string>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Noise</string>
+                </property>
+                <property name="shortcut">
+                 <string>Shift+N</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <layout class="QGridLayout" name="gridLayout_23">
+                <property name="horizontalSpacing">
+                 <number>10</number>
+                </property>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_SNR">
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI Semibold</family>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Signal-to-Noise Ratio</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>SNR</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSlider" name="horizontalSlider_SNR">
+                  <property name="minimumSize">
+                   <size>
+                    <width>370</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string>Signal-to-Noise Ratio</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLCDNumber" name="lcdNumber_SNR">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Signal-to-Noise Ratio</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(161, 186, 230);
+
+</string>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Sunken</enum>
+                  </property>
+                  <property name="segmentStyle">
+                   <enum>QLCDNumber::Flat</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QGridLayout" name="gridLayout_26">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="gridLayout_21">
+                <property name="horizontalSpacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QRadioButton" name="radioButton_normalized">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI Semibold</family>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string>Show the normalived signal</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Normalized signal</string>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QRadioButton" name="radioButton_actual">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI Semibold</family>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string>Show the actual signal</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Actual signal</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <layout class="QGridLayout" name="gridLayout_22">
+                <property name="horizontalSpacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QSlider" name="horizontalSlider_fs">
+                  <property name="minimumSize">
+                   <size>
+                    <width>370</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string>Sampling Frequency</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_fs">
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI Semibold</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Sampling Frequency</string>
+                  </property>
+                  <property name="text">
+                   <string> fs</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLCDNumber" name="lcdNumber_fs">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Sampling Frequency</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(161, 186, 230);
+</string>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Sunken</enum>
+                  </property>
+                  <property name="segmentStyle">
+                   <enum>QLCDNumber::Flat</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QGridLayout" name="gridLayout_25">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="pushButton_clear_all">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="palette">
+                 <palette>
+                  <active>
+                   <colorrole role="WindowText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Button">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Text">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="ButtonText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="PlaceholderText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </active>
+                  <inactive>
+                   <colorrole role="WindowText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Button">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Text">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="ButtonText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="PlaceholderText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </inactive>
+                  <disabled>
+                   <colorrole role="WindowText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Button">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Text">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="ButtonText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>82</red>
+                      <green>94</green>
+                      <blue>117</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="PlaceholderText">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </disabled>
+                 </palette>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Clear all</string>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Clear All</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>DSP/task 2/icons/clear2.png</normaloff>DSP/task 2/icons/clear2.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>15</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="shortcut">
+                 <string>Ctrl+K</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1185</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset>
+     <normaloff>DSP/task 2/icons/close.png</normaloff>DSP/task 2/icons/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionComposer">
+   <property name="text">
+    <string>Composer</string>
+   </property>
+  </action>
+  <action name="actionSampler">
+   <property name="text">
+    <string>Sampler</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>DSP/task 2/icons/open.png</normaloff>DSP/task 2/icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_freq</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_freq</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>538</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_amplitude</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_amplitude</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>585</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_phase</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_phase</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>630</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>632</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_SNR</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_SNR</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>859</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>842</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_fs</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_fs</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>933</x>
+     <y>840</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1042</x>
+     <y>851</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

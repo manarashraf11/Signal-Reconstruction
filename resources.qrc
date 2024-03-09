@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons\icons\signal processing studio.png</file>
+    <file>icons\icons\open.png</file>
+    <file>icons\icons\next2.png</file>
+    <file>icons\icons\export2.png</file>
+    <file>icons\icons\delete.png</file>
+    <file>icons\icons\close.png</file>
+    <file>icons\icons\clear2.png</file>
+    <file>icons\icons\add.png</file>
+</qresource>
+</RCC>
